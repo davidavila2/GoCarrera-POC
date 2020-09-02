@@ -1,0 +1,7 @@
+{
+  "name": "goCarrera-poc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
