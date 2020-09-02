@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { Tab1Page } from './tab1.page';
+import { ProfileBasicsStepComponent } from './profile-basics-step.component';
 
-describe('Tab1Page', () => {
-  let component: Tab1Page;
-  let fixture: ComponentFixture<Tab1Page>;
+describe('ProfileBasicsStepComponent', () => {
+  let component: ProfileBasicsStepComponent;
+  let fixture: ComponentFixture<ProfileBasicsStepComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [Tab1Page],
+      declarations: [ ProfileBasicsStepComponent ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(Tab1Page);
+    fixture = TestBed.createComponent(ProfileBasicsStepComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

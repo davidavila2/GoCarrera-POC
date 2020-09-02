@@ -1,0 +1,67 @@
+<ion-content>
+  <ion-list>
+    <ion-item lines="none">
+      <h1>Installer Profile</h1>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-text>Part 1: The Basics</ion-text>
+    </ion-item>
+    <form [formGroup]="basicForm">
+      <ion-item>
+        <ion-label position="stacked"> Name <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> Email <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> Company Name <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="companyName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> Mobile Number <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="mobileNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> Address <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> City <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">State <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-select formControlName="usState">
+          <!-- <ion-select-option *ngFor="let state of stateFacade.allUsStates$ | async" [value]="state.stateOrProvince">
+            {{ state.stateOrProvince }}
+          </ion-select-option> -->
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> Zip Code <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="zip"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> Date of Birth <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-datetime formControlName="dateOfBirth"></ion-datetime>
+      </ion-item>
+    </form>
+  </ion-list>
+  <ion-button (click)="profileUIService.close()" class="ion-margin">
+    <ion-icon name="chevron-back-outline"></ion-icon> Cancel
+  </ion-button>
+  <ion-button [disabled]="basicForm.invalid" (click)="saveForm()" class="ion-margin ion-float-right">Next <ion-icon
+      name="chevron-forward-outline"> </ion-icon>
+  </ion-button>
+</ion-content>

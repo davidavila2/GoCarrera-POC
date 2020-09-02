@@ -1,0 +1,26 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" [ngSwitch]="profile.currentEditingStep$ | async">
+      <ion-button color="gc-green" (click)="profile.cancelEdit()" *ngSwitchCase="'basics'">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+        Cancel
+      </ion-button>
+      <ion-button color="gc-green" (previousStep)="profile.goBackAndEditStep($event)" *ngSwitchDefault>
+        <ion-icon name="chevron-back-outline"></ion-icon>
+        Back
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ng-container [ngSwitch]="profile.currentEditingStep$ | async">
+    <app-profile-basics-step *ngSwitchCase="'basics'"></app-profile-basics-step>
+    <app-profile-insurance-step *ngSwitchCase="'insurance'" (previousStep)="profile.goBackAndEditStep($event)">
+    </app-profile-insurance-step>
+    <app-profile-tax-step *ngSwitchCase="'tax'" (previousStep)="profile.goBackAndEditStep($event)">
+    </app-profile-tax-step>
+    <app-profile-bio-step *ngSwitchCase="'bio'" (previousStep)="profile.goBackAndEditStep($event)">
+    </app-profile-bio-step>
+  </ng-container>
+</ion-content>

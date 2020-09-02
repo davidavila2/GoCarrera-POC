@@ -13,5 +13,18 @@
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="dark">
+        <h1>Tell us about yourself</h1>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content color="dark">
+      <h5>Click below to start filling out information about yourself</h5>
+    </ion-card-content>
+    <ion-button class="ion-padding-horizontal ion-margin-bottom ion-text-capitalize" expand="block" color="light"
+      size="default" (click)="profileUIService.showEditProfileModal()">
+      Click me
+    </ion-button>
+  </ion-card>
 </ion-content>

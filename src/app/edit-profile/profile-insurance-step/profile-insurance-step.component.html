@@ -1,0 +1,62 @@
+<ion-content>
+  <ion-list>
+    <ion-item lines="none">
+      <h1>Installer Profile</h1>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-text>Part 2: Insurance</ion-text>
+    </ion-item>
+    <form [formGroup]="insuranceForm">
+      <ion-item>
+        <ion-label position="stacked">Insurance Provider<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="insurance"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Policy Number<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="policyNumber"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked"> Agent Name<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="agentName"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Agent Phone Number<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="agentPhoneNumber"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="ion-padding-top">
+        <ion-label position="stacked">Insurance Policy Document<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <div style="
+            border: 1px dotted #f1f1f1;
+            height: 150px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          ">
+          <ion-icon name="push-outline"></ion-icon>
+          <ion-text>Drag and drop file here</ion-text>
+          <ion-text>or</ion-text>
+          <input formControlName="insurancePolicyDocument" type="file" />
+        </div>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Insurance Expiration Date<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-text>Select Date</ion-text>
+        <ion-datetime formControlName="insuranceExpirationDate"></ion-datetime>
+      </ion-item>
+    </form>
+  </ion-list>
+  <ion-button (click)="goBack()" class="ion-margin">
+    <ion-icon name="chevron-back-outline"></ion-icon> Back
+  </ion-button>
+  <ion-button [disabled]="insuranceForm.invalid" (click)="submitForm()" class="ion-margin ion-float-right">Next
+    <ion-icon name="chevron-forward-outline"> </ion-icon>
+  </ion-button>
+</ion-content>

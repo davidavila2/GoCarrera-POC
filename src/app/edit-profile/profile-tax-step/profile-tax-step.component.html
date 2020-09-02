@@ -1,0 +1,41 @@
+<ion-content>
+  <ion-list>
+    <ion-item lines="none">
+      <h1>Installer Profile</h1>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-text>Part 3: Tax Info</ion-text>
+    </ion-item>
+    <form [formGroup]="taxForm">
+      <ion-item>
+        <ion-label position="stacked">EIN<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input formControlName="ein"></ion-input>
+      </ion-item>
+      <ion-item lines="none" class="ion-padding-top">
+        <ion-label position="stacked">Federal W9<ion-text color="danger">*</ion-text>
+        </ion-label>
+        <div style="
+            border: 1px dotted #f1f1f1;
+            height: 150px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          ">
+          <ion-icon name="push-outline"></ion-icon>
+          <ion-text>Drag and drop file here</ion-text>
+          <ion-text>or</ion-text>
+          <input formControlName="fedW9" type="file" />
+        </div>
+      </ion-item>
+    </form>
+  </ion-list>
+  <ion-button (click)="goBack()" class="ion-margin">
+    <ion-icon name="chevron-back-outline"></ion-icon> Back
+  </ion-button>
+  <ion-button [disabled]="taxForm.invalid" (click)="submitForm()" class="ion-margin ion-float-right">Next <ion-icon
+      name="chevron-forward-outline"> </ion-icon>
+  </ion-button>
+</ion-content>
