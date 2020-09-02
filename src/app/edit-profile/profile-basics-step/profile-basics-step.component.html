@@ -41,9 +41,9 @@
         <ion-label position="stacked">State <ion-text color="danger">*</ion-text>
         </ion-label>
         <ion-select formControlName="usState">
-          <!-- <ion-select-option *ngFor="let state of stateFacade.allUsStates$ | async" [value]="state.stateOrProvince">
+          <ion-select-option *ngFor="let state of states" [value]="state.stateOrProvince">
             {{ state.stateOrProvince }}
-          </ion-select-option> -->
+          </ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>

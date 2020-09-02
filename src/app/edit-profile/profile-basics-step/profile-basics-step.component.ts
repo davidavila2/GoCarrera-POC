@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ProfileFacade } from 'src/app/state/profile.facade';
 import { Tab1UiService } from 'src/app/services/tab1-ui.service';
+import { STATES } from 'src/app/constants/states';
 
 @Component({
   selector: 'app-profile-basics-step',
@@ -10,6 +11,7 @@ import { Tab1UiService } from 'src/app/services/tab1-ui.service';
 })
 export class ProfileBasicsStepComponent implements OnInit {
   basicForm: FormGroup;
+  states = STATES;
 
   constructor(public profile: ProfileFacade, private formBuilder: FormBuilder, public profileUIService: Tab1UiService) { }
 
